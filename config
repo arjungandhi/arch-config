@@ -3,7 +3,20 @@
 
 # Some Variables
 set $mod Mod4
-set $browser firefox
+set $browser google-chrome
+
+#Background
+exec --no-startup-id nitrogen --restore
+
+#flux 
+exec --no-startup-id redshift
+
+#volume 
+exec volumeicon
+
+#Wifi
+exec --no-startup-id nm-applet
+
 
 
 # Disables Windows Title Bar (cause i3 gaps no worky with tile bars)
@@ -184,6 +197,11 @@ bar {
 # b
 bindsym $mod+b exec --no-startup-id $browser 
 
+# Brightness Keys
+bindsym XF86MonBrightnessUp exec light -A 5%
+bindsym XF86MonBrightnessDown exec light -U 5% 
+bindsym $mod+XF86MonBrightnessUp exec light -A 1%
+bindsym $mod+XF86MonBrightnessDown exec light -U 1%
 
 
 #Sets File Type to i3
