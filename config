@@ -6,13 +6,16 @@ set $mod Mod4
 set $browser google-chrome-stable
 
 #wal
-exec wal -i ~/Pictures/Backgrounds/
+exec --no-startup-id wal -i ~/Pictures/Backgrounds/
 
-#Background
-exec --no-startup-id nitrogen --restore
+# Xresources 
+exec xrdb -merge ~/.config/i3/xResources/.Xdefaults
 
-#flux 
-exec --no-startup-id redshift
+#Redshift
+exec redshift -P -O 3000
+
+#Battery Notification
+exec --no-startup-id i3-battery-popup -n
 
 #Wifi
 exec --no-startup-id nm-applet
@@ -24,13 +27,14 @@ exec --no-startup-id synclient VertScrollDelta=-112 HorizScrollDelta=-112 PalmDe
 for_window [class="^.*"] border pixel 2
 
 # Stuff to Make i3-Gaps Gap
-gaps inner 10 
-gaps outer 15 
+#gaps inner 10 
+#gaps outer 15 
 
 # Smart Gaps (Makes Gaps Gap if theres more than one thingy on the sceen)
 # smart_gaps on
 
-# Smart Border (Does what Smart Gaps Dows but with Borders) 
+# Smart Border (Does what Smart Gaps Dows but with Borders) # Redshift (extra dim + nightshift )
+
 smart_borders on
 
 
@@ -100,7 +104,7 @@ bindsym $mod+v split v
 bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
+#bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
@@ -205,14 +209,13 @@ bindsym XF86MonBrightnessDown exec light -U 5%
 bindsym $mod+XF86MonBrightnessUp exec light -A 1%
 bindsym $mod+XF86MonBrightnessDown exec light -U 1%
 
-# Pulse Audio controls
+# Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -q sset Master 3%+ 
 bindsym XF86AudioLowerVolume exec --no-startup-id amixer -q sset Master 3%-
 bindsym XF86AudioMute exec --no-startup-id amixer sset Master toggle
 
 #wal reload 
-bindsym $mod+n exec wal -i ~/Pictures/Backgrounds/
-
+bindsym $mod+n exec --no-startup-id wal -i ~/Pictures/Backgrounds/
 
 #Sets File Type to i3
 # vim:filetype=i3
