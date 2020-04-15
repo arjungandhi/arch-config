@@ -1,0 +1,12 @@
+zuxfoucault/colored-man-pages_mod
+zpm-zsh/ls
+robbyrussell/oh-my-zsh path:plugins/colorize
+robbyrussell/oh-my-zsh path:plugins/dircycle
+robbyrussell/oh-my-zsh path:plugins/cp
+zdharma/fast-syntax-highlighting
+arzzen/calc.plugin.zsh
+zsh-users/zsh-autosuggestions
+#agnoster
+romkatv/powerlevel10k
+#spaceship theme
+#denysdovhan/spaceship-prompt
